@@ -13,6 +13,11 @@ indexes:
 - kind: Post
   properties:
   - name: author
+  - name: ASC
+
+- kind: Post
+  properties:
+  - name: author
   - name: created
 
 - kind: Post
@@ -23,8 +28,56 @@ indexes:
 
 - kind: Post
   properties:
+  - name: author(key)
+  - name: created
+    direction: desc
+
+- kind: Post
+  properties:
+  - name: author.User.username
+  - name: created
+    direction: desc
+
+- kind: Post
+  properties:
+  - name: author.id
+  - name: created
+    direction: desc
+
+- kind: Post
+  properties:
+  - name: author.user.username
+  - name: created
+    direction: desc
+
+- kind: Post
+  properties:
+  - name: author.user_id
+  - name: created
+    direction: desc
+
+- kind: Post
+  properties:
+  - name: author.user_key
+  - name: created
+    direction: desc
+
+- kind: Post
+  properties:
+  - name: author.username
+  - name: created
+    direction: desc
+
+- kind: Post
+  properties:
   - name: author=
   - name: created
+
+- kind: Post
+  properties:
+  - name: author_key
+  - name: created
+    direction: desc
 
 - kind: Post
   properties:
@@ -33,5 +86,16 @@ indexes:
 
 - kind: Post
   properties:
+  - name: owner
+  - name: created
+    direction: desc
+
+- kind: Post
+  properties:
   - name: user=
   - name: created
+
+- kind: User
+  properties:
+  - name: username
+  - name: asc
